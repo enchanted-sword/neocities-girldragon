@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+		<title>commissions</title>
+		<link rel="icon" type="image/x-icon" href="/images/Favicon.png">
+		<meta property="og:url" content="https://girldragon.neocities.org/commissions" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="girldragon" />
+		<meta property="og:description" content="girldragon on neocities - commissions" />
+		<meta property="og:image" content="https://api.tumblr.com/v2/blog/t:uFDXsPzIvurDZF7n4YxBtA/avatar/512"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+		<script src="utils.js"></script>
+	</head>
+	<body>
+		<header id="header"></header>
+		<div id="mainBody" tm="dark">
+			<div id="sidebar"></div>
+			<div id="wrapper" class="wrapper">
+                <div class="card" tm="light">
+                    <h1>commissions!</h1>
+                    <p>i take art commissions! i'm currently taking a max of <b>5</b> slots at a time, and you can see my prices, TOS, and payment information below!</p>
+                    <p>for more examples of my art, visit <a href="/gallery?query=dragongirlsnout?selector=artist~=">my gallery!</a>!</p>
+                </div>
+                <div class="card" tm="light">
+                    <h2>commissions: <b id="queue">open!</b></h2>
+                    <table tm="dark" id="commsQueue">
+                        <tr>
+                            <th>date</th>
+                            <th>buyer</th>
+                            <th>commissioned via</th>
+                            <th>type</th>
+                            <th>paid?</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card gridContainer" tm="light">
+                    <div class="gridItem subCard">
+                        <h1 style="text-align: center;">sketch</h1>
+                        <img class="commsExample" src="/images/CommsSketchExample.png">
+                        <ul class="prices">
+                            <li>headshot - $10</li>
+                            <li>halfbody - $15</li>
+                            <li>fullbody - $20</li>
+                            <li style="font-size: 18px"><a href="/gallery?query=sketch">more examples</a></li>
+                        </ul>
+                    </div>
+                    <div class="gridItem subCard">
+                        <h1 style="text-align: center;">lined</h1>
+                        <img class="commsExample" src="/images/CommsLinedExample.png">
+                        <ul class="prices">
+                            <li>headshot - $20</li>
+                            <li>halfbody - $30</li>
+                            <li>fullbody - $40</li>
+                            <li>simple shading - +$10</li>
+                            <li style="font-size: 18px"><a href="/gallery?query=lined">more examples</a></li>
+                        </ul>
+                    </div>
+                    <div class="gridItem subCard">
+                        <h1 style="text-align: center;">lineless</h1>
+                        <img class="commsExample" src="/images/CommsLinelessExample.png">
+                        <ul class="prices">
+                            <li>headshot - $30</li>
+                            <li>halfbody - $45</li>
+                            <li>fullbody - $60</li>
+                            <li>simple shading - +$10</li>
+                            <li style="font-size: 18px"><a href="/gallery?query=lineless">more examples</a></li>
+                        </ul>
+                    </div>
+                    <div class="gridItem subCard" style="grid-column: 2 / 3;">
+                        <h1 style="text-align: center;">extras</h1>
+                        <ul class="prices">
+                            <li>complex backgrounds/scene elements - $20</li>
+                            <li>extra characters - +60%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" tm="light">
+                    <h1>contact me:</h1>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                      <h3 style="margin: 0;">discord: dragongirlsnout</h3>
+                      <h3 style="margin: 0;">tumblr: <a href="https://dragongirlsnout.tumblr.com" target="_blank">dragongirlsnout</a></h3>
+                      <h3 style="margin: 0;">email: xlucas4956@gmail.com</h3>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<script>
+			$("#header").load("header.html");
+			$("#sidebar").load("sidebar.html");
+            queue();
+        </script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+    </head>
+    <body>
+      <div class="sidebarImage">
+        <img width='244px' src='https://api.tumblr.com/v2/blog/dragongirlsnout/avatar/512'>
+      </div>
+      <div class="sidebar card">
+        <div class="headingLinks content"></div>
+      </div>
+      <script>
+        for (let heading of $("main h1")) {
+          let link = $(`<a href="${location.pathname}#${heading.id}">${heading.textContent}</a>`);
+          $(".headingLinks").append(link);
+        }
+      </script>
+    </body>
+</html>

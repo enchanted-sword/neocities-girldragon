@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+		<title>gallery</title>
+		<link rel="icon" type="image/x-icon" href="/images/Favicon.png">
+		<meta property="og:url" content="https://girldragon.neocities.org/gallery" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="girldragon" />
+		<meta property="og:description" content="girldragon on neocities - gallery" />
+		<meta property="og:image" content="https://api.tumblr.com/v2/blog/t:uFDXsPzIvurDZF7n4YxBtA/avatar/512"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+		<script src="utils.js"></script>
+    <style id="showNsfw">[tags*='nsfw'] { display: none; }</style>
+	</head>
+	<body>
+		<header id="header"></header>
+		<div class="wrapper">
+			<div id="sidebar"></div>
+			<main class="card main">
+  			<div class="content">
+  				<h1>gallery</h1>
+  				<p>this is a collection of both art that i've drawn and commissioned/gift/artfight art of my characters!</p>
+  				<p>you can sort through it using the search bar and options below!</p>
+          <div class="searchWrapper">
+            <input class="search" id="gallerySearch" title="search" name="search" placeholder="search">
+            <button class="search" id="gallerySearchButton"><span class="material-symbols-outlined">search</span></button>
+            <button class="search" id="galleryResetButton"><span>clear filters</span></button>
+            <button class="search" id="galleryOgButton"><span>my art</span></button>
+            <button class="search" id="galleryOtherButton"><span>others' art</span></button>
+            <button class="search" id="galleryCiaButton"><span>art of my sona!</span></button>
+          </div>
+          <div id="gallery"></div>
+  			</div>
+			</main>
+		</div>
+    <footer id="footer"></footer>
+		<script>
+			$("#header").load("header.html");
+			$("#sidebar").load("sidebar.html");
+      $("#footer").load("footer.html");
+      nsfwPrompt();
+			gallery(location.pathname.split("?query=")[1] || "all", window.location.href.split("?selector=")[1] || "tags*=");
+			$("#gallerySearch").on("keydown", (e) => {
+				if (e.which === 13) {
+					gallery($("#gallerySearch").val());
+				}
+			});
+			$("#gallerySearchButton").on("click", () => {
+				gallery($("#gallerySearch").val());
+			});
+			$("#galleryResetButton").on("click", () => {
+				gallery();
+			});
+			$("#galleryOgButton").on("click", () => {
+				gallery("dragongirlsnout", "artist~=");
+			});
+			$("#galleryOtherButton").on("click", () => {
+				gallery("dragongirlsnout", "artist!=");
+			});
+			$("#galleryCiaButton").on("click", () => {
+				gallery("acciaccatura");
+			});
+    </script>
+	</body>
+</html>
